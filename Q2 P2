@@ -1,1 +1,7 @@
-
+\*Questão 2: Suponha que você está desenvolvendo um sistema de gestão de uma escola. Crie duas classes: 'Aluno` e Curso`. Cada aluno deve ter um nome, idade e número de matrícula. Cada curso deve ter um nome, uma descrição e uma lista
+de alunos matriculados. Desenvolva métodos apropriados para adicionar um aluno a um curso e para exibir a lista de alunos matriculados em um determinado curso. Em seguida, crie um programa principal que demonstre o uso dessas classes. 
+Crie alguns objetos de aluno e curso, matricule os alunos nos cursos e exiba a lista de alunos matriculados para cada curso.
+Observações:
+- Lembre-se de usar modificadores de acesso apropriados (por exemplo, private, public) para os atributos das classes. Promova o encapsulamento sempre que possível.
+- Utilize construtores apropriados para inicializar os objetos.
+- Certifique-se de que seu código seja claro e bem comentado.*/
