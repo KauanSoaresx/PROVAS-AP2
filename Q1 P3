@@ -1,1 +1,7 @@
+\*Crie uma classe Pessoa com atributos nome (private) e idade (private). Crie uma classe Aluno que herda de Pessoa e adiciona o atributo matricula (private). Crie métodos para acessar e modificar os atributos. Adicione um método 
+getDetalhes() à classe Pessoa que retorna uma string com os detalhes do objeto. Sobrescreva esse método na classe Aluno para incluir informações específicas do aluno. Crie uma classe Teste Heranca com o método main.
+Instancie objetos das classes Aluno e Pessoa e teste os métodos herdados e sobrescritos.*/
+
+
+
 
