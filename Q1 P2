@@ -1,1 +1,9 @@
+\*Questão 1: Considere a seguinte descrição: você foi contratado para desenvolver um sistema debiblioteca em Java. Crie uma classe chamada 'Livro que represente um livro na biblioteca. Cada livro deve ter os seguintes atributos:
+- Título
+- Autor
+- Ano de publicação
+- Número de páginas
+Além disso, a classe 'Livro` deve ter um método chamado exibirDetalhes que imprima no console todos os detalhes do livro, formatados de maneira clara. Agora, crie um programa principal que instancie dois objetos da classe Livro com diferentes valores e chame o método 
+exibirDetalhes para cada um deles.*/
+
 
