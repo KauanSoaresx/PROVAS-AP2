@@ -1,1 +1,14 @@
+\* Considere um sistema de gestão de produtos eletrônicos em uma loja. Crie uma hierarquia de classes para representar diferentes tipos de produtos, tais como Computador e Smartphone. Implemente o polimorfismo para calcular descontos 
+específicos para cada tipo de produto.
+1. Classe base abstrata: Produto: Crie uma classe abstrata Produto com os métodos abstratos calcularPreco() e exibirlnformacoes(). Implemente os atributos necessários para armazenar informações comuns a todos os produtos, como nome, 
+preço base e marca.
+2. Classes derivadas: Computador e Smartphone. Crie duas classes que herdem de `Produto', representando computadores e smartphones. A classe 'Computador deve ter os atributos adicionais: `processador' (String) e memoria RAM (int). A 
+classe 'Smartphone deve ter os atributos adicionais: sistema Operacional (String) e 'tamanhoTela (double).Implemente os métodos calcularPreco() para cada classe, aplicando descontos específicos para cada tipo de produto. Implemente o
+método exibirInformacoes() para exibir informações específicas de cada produto.
+3. Teste do Polimorfismo: Crie um programa principal que utilize um array de Produto para armazenar diferentes tipos de produtos. Instancie objetos de Computador' e 'Smartphone e armazene-os no array. Utilize um loop para percorrer 
+o array e chamar os métodos calcularPreco() e exibirInformacoes() para cada produto, sem conhecer previamente o tipo específico de cada objeto. Certifique-se de que os métodos calcularPreco() retornem os preços finais após aplicação 
+dos descontos específicos para cada tipo de produto. Utilize conceitos de polimorfismo para chamar os métodos apropriados dinamicamente, sem a necessidade de verificar explicitamente o tipo de cada produto.*/
+
+
+
 
