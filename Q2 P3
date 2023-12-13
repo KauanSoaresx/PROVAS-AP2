@@ -10,5 +10,157 @@ o array e chamar os métodos calcularPreco() e exibirInformacoes() para cada pro
 dos descontos específicos para cada tipo de produto. Utilize conceitos de polimorfismo para chamar os métodos apropriados dinamicamente, sem a necessidade de verificar explicitamente o tipo de cada produto.*/
 
 
-
+abstract class Produto{
+    public String nome;
+    public double precoBase;
+    public String marca;
+    
+    public Produto(String nome, double precoBase, String marca){
+        this.nome=nome;
+        this.precoBase=precoBase;
+        this.marca=marca;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public void setNome(String nome){
+        this.nome=nome;
+    }
+    
+    public double getPrecoBase(){
+        return precoBase;
+    }
+    public void setPrecoBase(double precoBase){
+        this.precoBase=precoBase;
+    }
+    
+    public String getMarca(){
+        return marca;
+    }
+    public void setMarca(String marca){
+        this.marca=marca;
+    }
+    
+    
+    public String calcularPreco(){
+        double desconto=0;
+        double precoFinal;
+        
+        precoFinal=getPrecoBase() - desconto;
+        return "Preco Final com desconto de x%(" + desconto + ") é: " + precoFinal;
+    }
+    
+    public String exibirInformacoes(){
+        return "Nome: " + getNome() + "\nPreco Base: " + getPrecoBase() + "\nMarca: " + getMarca();
+        
+        
+        
+        
+    }
+} 
+public class Computador extends Produto{
+    private String processador;
+    private int memoriaRAM;
+    
+    public Computador(String nome, double precoBase, String marca,String processador,int memoriaRAM){
+        super(nome,precoBase,marca);
+        this.processador=processador;
+        this.memoriaRAM=memoriaRAM;
+       
+    }
+    
+    
+    public String getProcessador(){
+        return processador;
+    }
+    public void setProcessador(String processador){
+        this.processador=processador;
+    }
+    
+    public int getMemoriaRAM(){
+        return memoriaRAM;
+    }
+    public void setMemoriaRAM(int memoriaRAM){
+        this.memoriaRAM=memoriaRAM;
+    }
+    
+    @Override
+    public String calcularPreco(){
+        double desconto;
+        double precoFinal;
+        desconto=getPrecoBase()*0.15;
+        precoFinal=getPrecoBase() - desconto;
+        return "Preco Final com desconto de 15%(" + desconto + ") é: " + precoFinal;
+    }
+     @Override
+    public String exibirInformacoes(){
+        return "Nome: " + getNome() + "\nPreco Base: " + getPrecoBase() + "\nMarca: " + getMarca() + "\nProcessador: " + getProcessador() + "\nMemoria RAM: " + getMemoriaRAM();
+        
+        
+        
+        
+    }
+} 
+public class Smartphone extends Produto{
+    private String sisOper;
+    private double tamanhoTela;
+   
+    public Smartphone(String nome, double precoBase, String marca,String sisOper,double tamanhoTela){
+        super(nome,precoBase,marca);
+        this.sisOper=sisOper;
+        this.tamanhoTela=tamanhoTela;
+    }
+    public String getSisOper(){
+        return sisOper;
+    }
+    public void setSisOper(String setSisOper){
+        this.sisOper=sisOper;
+    }
+    
+    public double getTamanhoTela(){
+        return tamanhoTela;
+    }
+    public void setTamanhoTela(double tamanhoTela){
+        this.tamanhoTela=tamanhoTela;
+    }
+    
+    @Override
+    public String calcularPreco(){
+        double desconto;
+        double precoFinal;
+        desconto=getPrecoBase()*0.2;
+        precoFinal=getPrecoBase() - desconto;
+        return "Preco Final com desconto de 20%(" + desconto + ") é: " + precoFinal;
+    }
+     @Override
+    public String exibirInformacoes(){
+        return "Nome: " + getNome() + "\nPreco Base: " + getPrecoBase() + "\nMarca: " + getMarca() + "\nSistema Operacional: " + getSisOper() + "\nTamanho da Tela: " + getTamanhoTela();
+        
+        
+        
+        
+    }
+} 
+public class Teste{
+    public static void main(String [] args){
+        Produto p1 = new Computador("ASPE",3000,"ASUS","Linux",16);
+        Produto p2 = new Computador("derek",3520,"xiang","windows",32);
+        Produto p3 = new Smartphone("Pocket",350,"Samsung","Android",8.5);
+        Produto p4 = new Smartphone("Iphone15",12000,"Apple","IOS",12.0);
+        
+        
+        List<Produto> todosProdutos = new ArrayList<>();
+        todosProdutos.add(p1);
+        todosProdutos.add(p2);
+        todosProdutos.add(p3);
+        todosProdutos.add(p4);
+        
+        for(Produto produto : todosProdutos){
+            System.out.println(produto.exibirInformacoes() +"\n" + produto.calcularPreco()+ "\n");
+        }
+        
+        
+        
+    }
+}
 
