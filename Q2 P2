@@ -5,3 +5,180 @@ Observações:
 - Lembre-se de usar modificadores de acesso apropriados (por exemplo, private, public) para os atributos das classes. Promova o encapsulamento sempre que possível.
 - Utilize construtores apropriados para inicializar os objetos.
 - Certifique-se de que seu código seja claro e bem comentado.*/
+
+public class Aluno{
+    private String nome;
+    private int idade;
+    private int numMatric;
+    
+    public Aluno(String nome, int idade, int numMatric){
+        this.nome=nome;
+        this.idade=idade;
+        this.numMatric=numMatric;
+        
+    }
+    
+    public String getNome(){
+        return nome;
+    }
+    
+    public void setNome(String nome){
+        this.nome=nome;
+    }
+    public int getIdade(){
+        return idade;
+    }
+    
+    public void setIdade(int idade){
+        this.idade=idade;
+    }
+   public int getNumMatric(){
+        return numMatric;
+    }
+    
+    public void setNumMatric(int numMatric){
+        this.numMatric=numMatric;
+    }
+    
+    
+    
+}
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Curso{
+    private String nomeCurso;
+    private String descricao;
+    private List<Aluno> aluno;
+    
+    public Curso(String nomeCurso,String descricao){
+        this.nomeCurso=nomeCurso;
+        this.descricao=descricao;
+        this.aluno= new ArrayList<>();
+    }
+    
+    public String getNomeCurso(){
+        return nomeCurso;
+    }
+    
+    public void setNomeCurso(String nomeCurso){
+        this.nomeCurso=nomeCurso;
+    }
+    
+    
+    public String getDescricao(){
+        return descricao;
+    }
+    
+    public void setDescricao(String descricao){
+        this.descricao=descricao;
+    }
+    
+    public List<Aluno> getAluno(){
+        return aluno;
+    }
+    
+    public void adicionarAluno(Aluno aluno){
+        this.aluno.add(aluno);
+        
+    }
+    
+    public String exibirAlunos() {
+    StringBuilder result = new StringBuilder();
+    System.out.println("Nome do alunos do curso: ");
+    for (Aluno aluno : this.aluno) {
+        result.append(aluno.getNome()).append("   ");
+    }
+    return result.toString();
+}
+    
+}
+
+public class Teste{
+    public static void main(String[] args){
+        Aluno aluno1 = new Aluno("Kauan",18,2730);
+        Aluno aluno2 = new Aluno("Bruna",21,2890);
+        Aluno aluno3 = new Aluno("Gabriela",19,2345);
+        Aluno aluno4 = new Aluno("Ana Luiza",16,2908);
+        
+        Curso curso1 = new Curso("Computação","Computacionar problemas");
+        Curso curso2 = new Curso("Biologia","estudar a natureza");
+        
+        curso1.adicionarAluno(aluno1);
+        curso1.adicionarAluno(aluno4);
+        curso2.adicionarAluno(aluno2);
+        curso2.adicionarAluno(aluno3);
+        
+        System.out.println("\nCurso 1: " + curso1.getNomeCurso() + "\nDescricao: "+ curso1.getDescricao() + "\nAlunos: ");
+        for(Aluno aluno: curso1.getAluno()){
+            System.out.println("Nome do aluno: " + aluno.getNome()+ "\nIdade: " + aluno.getIdade() + "\nNumero de Matricula:" + aluno.getNumMatric() );
+        }
+        System.out.println("Lista de alunos: " + curso1.exibirAlunos());
+        
+        System.out.println("\nCurso 2: " + curso2.getNomeCurso() + "\nDescricao: "+ curso2.getDescricao() + "\nAlunos: ");
+        for(Aluno aluno: curso2.getAluno()){
+            System.out.println("Nome do aluno: " + aluno.getNome()+ "\nIdade: " + aluno.getIdade() + "\nNumero de Matricula:" + aluno.getNumMatric() );
+        }
+        System.out.println(curso2.exibirAlunos());
+
+
+
+//teste com todos os alunos juntos sem previamente saber seu curso
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Teste {
+    public static void main(String[] args) {
+        Aluno aluno1 = new Aluno("Kauan", 18, 2730);
+        Aluno aluno2 = new Aluno("Bruna", 21, 2890);
+        Aluno aluno3 = new Aluno("Gabriela", 19, 2345);
+        Aluno aluno4 = new Aluno("Ana Luiza", 16, 2908);
+
+        Curso curso1 = new Curso("Computação", "Computacionar problemas");
+        Curso curso2 = new Curso("Biologia", "estudar a natureza");
+
+        curso1.adicionarAluno(aluno1);
+        curso1.adicionarAluno(aluno4);
+        curso2.adicionarAluno(aluno2);
+        curso2.adicionarAluno(aluno3);
+
+        // Combina as listas de alunos dos diferentes cursos
+        List<Aluno> todosAlunos = new ArrayList<>();
+        todosAlunos.addAll(curso1.getAluno());
+        todosAlunos.addAll(curso2.getAluno());
+
+        // Exibe todos os alunos usando um único loop
+        System.out.println("Lista de todos os alunos: ");
+        for (Aluno aluno : todosAlunos) {
+            System.out.println("Nome do aluno: " + aluno.getNome() +
+                    "\nIdade: " + aluno.getIdade() +
+                    "\nNumero de Matricula: " + aluno.getNumMatric() +
+                    "\nCurso: " + getNomeCurso(aluno, curso1, curso2) +
+                    "\n---");
+        }
+    }
+
+    // Função para obter o nome do curso de um aluno
+    private static String getNomeCurso(Aluno aluno, Curso curso1, Curso curso2) {
+        if (curso1.getAluno().contains(aluno)) {
+            return curso1.getNomeCurso();
+        } else if (curso2.getAluno().contains(aluno)) {
+            return curso2.getNomeCurso();
+        } else {
+            return "Curso não encontrado";
+        }
+    }
+}
+
+    }
+}
+
+
+
+
